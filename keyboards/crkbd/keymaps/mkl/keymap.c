@@ -27,16 +27,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // tab when tapped, SYM layer when held
 #define TABSYM LT(SYM, KC_TAB)
 
+// home row mods, let's go
+#define E_LSFT MT(MOD_LSFT, KC_E)
+#define T_RSFT MT(MOD_RSFT, KC_T)
+#define O_LCTL MT(MOD_LCTL, KC_O)
+#define N_RCTL MT(MOD_RCTL, KC_N)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX, KC_QUOT, KC_COMM, KC_DOT , KC_P   , KC_Y   ,                      KC_F   , KC_G   , KC_C   , KC_R   , KC_L   , XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_ESC , KC_A   , KC_O   , KC_E   , KC_U   , KC_I   ,                      KC_D   , KC_H   , KC_T   , KC_N   , KC_S   , KC_ENT ,
+      KC_ESC , KC_A   , O_LCTL , E_LSFT , KC_U   , KC_I   ,                      KC_D   , KC_H   , T_RSFT , N_RCTL , KC_S   , KC_ENT ,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL, KC_SCLN, KC_Q   , KC_J   , KC_K   , KC_X   ,                      KC_B   , KC_M   , KC_W   , KC_V   , KC_Z   , KC_RCTL,
+      XXXXXXX, KC_SCLN, KC_Q   , KC_J   , KC_K   , KC_X   ,                      KC_B   , KC_M   , KC_W   , KC_V   , KC_Z   , XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI, KC_LSFT, TABSYM,    XXXXXXX, SPNAV  , XXXXXXX
+                                          KC_LGUI, MO(NAV), TABSYM,    XXXXXXX, KC_SPC  , XXXXXXX
                                       //`--------------------------'  `--------------------------'
 
   ),
