@@ -25,6 +25,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // tab when tapped, SYM layer when held
 #define TABSYM LT(SYM, KC_TAB)
+// u when tapped, NAV layer when held
+#define U_NAV LT(NAV, KC_U)
 
 // home row mods, let's go
 #define E_LSFT MT(MOD_LSFT, KC_E)
@@ -37,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX, KC_QUOT, KC_COMM, KC_DOT , KC_P   , KC_Y   ,                      KC_F   , KC_G   , KC_C   , KC_R   , KC_L   , XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_ESC , KC_A   , O_LCTL , E_LSFT , KC_U   , KC_I   ,                      KC_D   , KC_H   , T_RSFT , N_RCTL , KC_S   , KC_ENT ,
+      KC_ESC , KC_A   , O_LCTL , E_LSFT , U_NAV  , KC_I   ,                      KC_D   , KC_H   , T_RSFT , N_RCTL , KC_S   , KC_ENT ,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, KC_SCLN, KC_Q   , KC_J   , KC_K   , KC_X   ,                      KC_B   , KC_M   , KC_W   , KC_V   , KC_Z   , XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
