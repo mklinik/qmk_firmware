@@ -31,6 +31,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // someone said this might help with boot hang problem, but for some reason it swaps sides, the left
 // side is always the right side and vice versa
 //#define SPLIT_USB_DETECT
+// Trying again to fix the boot hang problem
+#define NO_USB_STARTUP_CHECK
 
 #define TAPPING_FORCE_HOLD
 #define TAPPING_TERM 250
