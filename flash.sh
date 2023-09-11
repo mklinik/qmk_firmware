@@ -10,7 +10,7 @@ then
 fi
 
 sleep 5
-mount /media/$DEVICE
+pmount $DEVICE
 cp crkbd_rev1_mkl_promicro_rp2040.uf2 /media/$DEVICE
 sync
-umount /media/$DEVICE
+pumount $DEVICE
