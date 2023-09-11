@@ -118,13 +118,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [GAM] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DF(DEF), XXXXXXX,
+      KC_ESC , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DF(DEF), XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, KC_A   , S_LCTL , D_LSFT , KC_F   , KC_G   ,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      KC_LCTL, KC_A   , KC_S   , KC_D   , KC_F   , KC_G   ,                      XXXXXXX, XXXXXXX, KC_RSFT, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, KC_Z   , KC_X   , KC_M   , KC_V   , KC_B   ,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      KC_LSFT, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   ,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          TAB_GA2, ESC_SFT, SPC_CTL,    _______, _______, _______
+                                         KC_LALT , KC_SPC , KC_TAB ,    _______, _______, _______
                                       //`--------------------------'  `--------------------------'
   ),
 
