@@ -27,6 +27,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define GAM 5 // gaming layer, to be used as default
 #define GA3 6 // gaming layer, for rogue command
 #define GA0 7 // gaming layer top, to be used as temporary layer
+#define SG0 8 // bottom, default layer for stormgate
+#define SGB 9 // build layer for stormgate
+#define SGC 10 // control layer for stormgate
+#define SGC2 11 // second control layer for stormgate
 
 // tab when tapped, SYM layer when held
 #define TABSYM LT(SYM, KC_TAB)
@@ -54,6 +58,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define SPC_CTL MT(MOD_LCTL, KC_SPC)
 #define TAB_ALT MT(MOD_LALT, KC_TAB)
 #define TAB_GA2 LT(GA2, KC_TAB)
+
+// for stormgate
+#define CTR_GRP LM(SGC, MOD_LCTL)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [DEF] = LAYOUT_split_3x6_3(
@@ -111,7 +118,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  ,                      KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, KC_LALT, KC_LCTL, KC_DEL , XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, KC_F12 , KC_F11 , XXXXXXX,
+      XXXXXXX, KC_LALT, KC_LCTL, KC_DEL , XXXXXXX, XXXXXXX,                      DF(SG0), XXXXXXX, XXXXXXX, KC_F12 , KC_F11 , XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, _______, _______,    _______, _______, _______
                                       //`--------------------------'  `--------------------------'
@@ -148,6 +155,59 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       XXXXXXX, KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, KC_6   , KC_7   , KC_8   , KC_9   , KC_0   ,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                          _______, _______, _______,    _______, _______, _______
+                                      //`--------------------------'  `--------------------------'
+  ),
+
+
+
+
+
+
+  [SG0] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+      XXXXXXX, KC_S   , KC_3   , KC_4   , KC_C   , KC_V   ,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX, KC_Z   , KC_2   , KC_1   , KC_A   , KC_X   ,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX, KC_G   , KC_5   , KC_6   , KC_D   , KC_B   ,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                          MO(SGB), MO(SGC), KC_LSFT,    _______, _______, DF(DEF)
+                                      //`--------------------------'  `--------------------------'
+  ),
+
+  [SGB] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+      XXXXXXX, KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX, KC_A   , KC_S   , KC_D   , KC_F   , KC_G   ,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   ,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                          _______, _______, _______,    _______, _______, _______
+                                      //`--------------------------'  `--------------------------'
+  ),
+
+  [SGC] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+      XXXXXXX,C(KC_F1), S(KC_3), S(KC_4),C(KC_F2),C(KC_F3),                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX, KC_F1  , S(KC_2), S(KC_1), KC_F2  , KC_F3  ,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX,MO(SGC2), S(KC_5), S(KC_6),C(KC_F4), KC_F4  ,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                          _______, _______, _______,    _______, _______, _______
+                                      //`--------------------------'  `--------------------------'
+  ),
+
+  [SGC2] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+      XXXXXXX, XXXXXXX, A(KC_3), A(KC_4), XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX, XXXXXXX, A(KC_2), A(KC_1), XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX, XXXXXXX, A(KC_5), A(KC_6), XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, _______, _______,    _______, _______, _______
                                       //`--------------------------'  `--------------------------'
