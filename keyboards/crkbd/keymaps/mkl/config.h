@@ -34,9 +34,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Trying again to fix the boot hang problem
 #define NO_USB_STARTUP_CHECK
 
+// https://precondition.github.io/home-row-mods
+
+// don't auto-repeat when tap-holding a home row mod
 #define TAPPING_FORCE_HOLD
-#define TAPPING_TERM 250
-#define PERMISSIVE_HOLD
+
+#define TAPPING_TERM 180
+
+//#define PERMISSIVE_HOLD
+
+// only activate the hold action after the TAPPING_TERM, never on interrupt
 #define IGNORE_MOD_TAP_INTERRUPT
 
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
